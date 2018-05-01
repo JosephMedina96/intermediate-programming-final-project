@@ -1,0 +1,27 @@
+{
+  "name": "reminder-bot",
+  "version": "1.0.0",
+  "description": "A bot to help remind you of things.",
+  "main": "app.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JosephMedina96/intermediate-programming-final-project.git"
+  },
+  "keywords": [
+    "Discord",
+    "Bot",
+    "Node.js"
+  ],
+  "author": "That guy",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JosephMedina96/intermediate-programming-final-project/issues"
+  },
+  "homepage": "https://github.com/JosephMedina96/intermediate-programming-final-project#readme"
+}
