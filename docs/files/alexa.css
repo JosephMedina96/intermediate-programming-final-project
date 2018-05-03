@@ -1,0 +1,88 @@
+/* Alexa.css */
+/* For Intermediate Programming */
+
+/* Classes */
+.Standard {
+	overflow: hidden;
+	width: 100%;
+	color: white;
+	background-image: url("../images/main-standard.png");
+	/*background-color: #5c1b8e;*/
+	padding-left: 2px;
+	padding-right: 30px;
+	padding-top: 2px;
+	padding-bottom: 2px;
+	border-top: 2px solid white;
+	border-bottom: 2px solid white;
+	font-family: 'Passion One', cursive;
+	font-size: 24pt;
+	text-align: left;
+	line-height: 30px;
+}
+
+/* Elements */
+body {
+	background-image: url("../images/main-background.jpg");
+	-webkit-background-size: 100%;
+	-moz-background-size: 100%;
+	background-size: 100%;
+	background-attachment: fixed;
+	padding: 0px;
+	margin: 0px;
+}
+
+a:link {
+	color: white;
+}
+
+a:visited {
+	color: #9f78bc;
+}
+
+div#Banner {
+	width: 100%;
+	overflow-x: hidden; 
+	height: 100%;
+	color: yellow;
+	background-image: url("../images/main-banner.jpg");
+	-webkit-background-size: 100%;
+	-moz-background-size: 100%;
+	background-size: 100%;
+	background-position: center;
+	padding-top: 10px;
+	padding-left: 15px;
+	padding-right: 15px;
+	border-top: 2px solid white;
+	border-bottom: 2px solid white;
+	font-family: 'Black Han Sans', sans-serif;
+	line-height: 10px;
+}
+
+div#Banner h1 {
+	font-size: 48pt;
+}
+
+div#Banner h3 {
+	font-size: 30pt; 
+}
+
+div#About {
+	width: 100%;
+	padding-left: 15px;
+}
+
+div#About h1 {
+	font-size: 36pt;
+	text-align: center;
+}
+
+div#About pre#Code {
+	opacity: 0.9;
+	background-color: black;
+	padding: 20px;
+}
+
+img {
+	position: relative;
+	padding-left: 24%;
+}

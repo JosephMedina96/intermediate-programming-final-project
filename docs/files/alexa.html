@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Portfolio | About the Alexa Skill</title>
+		<link href="https://fonts.googleapis.com/css?family=Black+Han+Sans|Passion+One" rel="stylesheet"> 
+		<link rel="stylesheet" href="alexa.css">
+	</head>
+
+	<body>
+		<div>
+			<svg width="400" height="50">
+  				<rect width="400" height="50" style="fill:none" />
+				Sorry, your browser does not support inline SVG.
+			</svg>
+
+			<div id="Banner">
+				<h1>Joseph Medina</h1>
+				<h3>Intermediate Programming Portfolio / Final Project</h3>
+			</div>
+
+			<svg width="400" height="75">
+  				<rect width="400" height="75" style="fill:none" />
+				Sorry, your browser does not support inline SVG.
+			</svg>
+
+			<div class="Standard">
+				<div id="About">
+					<h1>About the Alexa Skill</h1>
+					<p>One of the assignments for the class involved working with the Amazon Alexa. Although my "skill" (Amazon's terminology for a program run with Alexa) was never published for actual users to download and make use of, I feel like it wouldn't have generated much use anyway.</p>
+
+					<p>The basic concept behind my skill was a joke application that helped teach users how to breathe. It covered a variety of topics, including but not limited to:</p>
+
+					<ul>
+						<li>Deep breathing</li>
+						<li>Erratic breathing</li>
+						<li>How to breathe normally</li>
+					</ul>
+
+					<p>Due to time constraints, this idea was modified to instead give simple facts about breathing. I will probably not revisit this project. I do, however, believe that it was a worthwhile experience in working with a popular framework.</p>
+
+					<img src="../images/alexa.jpg" id="Alexa">
+
+					<p><br>Code (Old):<pre id="Code"><code>'use strict';
+const Alexa = require('alexa-sdk');
+
+const APP_ID = '';
+
+const SKILL_NAME = 'breathe';
+const GET_FACT_MESSAGE = "Here's your requested information: ";
+const HELP_MESSAGE = 'Okay... What do you want to know about 
+	breathing?';
+const HELP_REPROMPT = 'What do you want to know about 
+	breathing?';
+const STOP_MESSAGE = 'Goodbye!';
+
+const data = [
+    "To hold your breath... Simply close your mouth and stop 
+    breathing for a short time.",
+    "To take a deep breath... Inhale for about two to five 
+    seconds.",
+    "To breathe normally... Inhale and exhale alternatively."
+];
+
+exports.handler = function(event, context, callback) {
+    var alexa = Alexa.handler(event, context);
+    alexa.appId = APP_ID;
+    alexa.registerHandlers(handlers);
+    alexa.execute();
+};
+
+const handlers = {
+    'LaunchRequest': function () {
+        this.emit('Breathe');
+    },
+    'Breathe': function () {
+        const responseArr = data;
+        const breath = this.body.request.intent.slots.How;
+
+        if(breath == 'hold' || breath == 'holding'){
+            const requestedData = responseArr[0];
+        }else if(breath == 'deep' || breath == 'deeply'){
+            const requestedData = responseArr[1];
+        }else if(breath == 'normal' || breath == 'normally'){
+            const requestedData = responseArr[2];
+        }
+
+        const speechOutput = GET_FACT_MESSAGE+requestedData;
+
+        this.response.cardRenderer(SKILL_NAME,requestedData);
+        this.response.speak(speechOutput);
+        this.emit(':responseReady');
+    },
+    'AMAZON.HelpIntent': function () {
+        const speechOutput = HELP_MESSAGE;
+        const reprompt = HELP_REPROMPT;
+
+        this.response.speak(speechOutput).listen(reprompt);
+        this.emit(':responseReady');
+    },
+    'AMAZON.CancelIntent': function () {
+        this.response.speak(STOP_MESSAGE);
+        this.emit(':responseReady');
+    },
+    'AMAZON.StopIntent': function () {
+        this.response.speak(STOP_MESSAGE);
+        this.emit(':responseReady');
+    },
+};</code></pre></p>
+
+					<a href="../index.html">Back</a>
+				</div>
+
+				
+			</div>
+
+			<svg width="400" height="75">
+  				<rect width="400" height="75" style="fill:none" />
+				Sorry, your browser does not support inline SVG.
+			</svg>
+		</div>
+	</body>
+</html>
